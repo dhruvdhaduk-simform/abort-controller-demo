@@ -44,6 +44,15 @@ downloadBtn.addEventListener("click", () => {
     controller?.abort();
 
     fetchVideo()
+        .then((blob) => {
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement("a");
+            link.href = url;
+            link.download = "javascript.mp4";
+            document.body.append(link);
+            link.click();
+            link.remove();
+        })
         .catch((err) => {
             if (err.name === "AbortError") {
                 alert("Download Aborted");
