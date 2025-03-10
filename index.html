@@ -7,28 +7,36 @@
 
         <link rel="stylesheet" href="index.css">
 
-        <script src="index.js" defer></script>
+        <script src="scripts/downloader.js"></script>
+        <script src="scripts/index.js" defer></script>
     </head>
     <body>
-        
+
         <div class="container">
             <button id="download-btn">
                 Download Video
             </button>
 
             <div class="progressbar-container">
-                <progress id="progressbar" min="0" max="100" value="0"></progress>
+                <progress id="progressbar" class="hide" min="0" max="100" value="0"></progress>
             </div>
 
-            <div class="progress-percent-container">
+            <div id="progress-percent-container" class="hide progress-percent-container">
                 <span id="progress-percent">0</span>
                 <span>% Completed</span>
             </div>
 
-            <button id="cancel">
-                Cancel
-            </button>
+            <div id="control-buttons">
+                <button id="pause-resume" class="hide">
+                    Button
+                </button>
+
+                <button id="cancel" class="hide">
+                    Cancel
+                </button>
+            </div>
+
         </div>
-        
+
     </body>
 </html>
